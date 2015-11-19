@@ -51,13 +51,24 @@ while (n/3 >= k) {
 }
 alert("At least 'k' should be equal: " + k);
 */
-
+/*
 //Task #6
 var n = +prompt("input a number","");
+var number;
+while (n > 0) {
+	number = n%10;
+	if 
+}
+*/
 
-
-
-
+var n = 122;
+var k="";
+do {
+	if (n > 1 && n%10 == 0) { k+= 0;}
+	k+=(n%10);
+	n-=n%10;	
+} while (n!=0);
+alert(k);
 
 
 
