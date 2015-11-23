@@ -1,4 +1,5 @@
 ﻿//Task #1
+/*Даны два целых числа A и B (A < B). Выведите в порядке возрастания все целые числа, расположенные между A и B (включая сами числа A и B), а также количество N этих чисел. */
 /*
 var a = +prompt("input first number","");
 var b = +prompt("input second number","");
@@ -12,6 +13,7 @@ alert("The numerical series: " + arr + "    Amount of numbers in the row: " + ar
 */
 
 //Task #2
+/*Даны два целых числа A и B (A < B). Найдите сумму всех целых чисел от A до B включительно.*/
 /*
 var a = +prompt("input first number","");
 var b = +prompt("input second number","");
@@ -23,6 +25,7 @@ alert("The elements sum is: " + sum);
 */
 
 // Task #3
+//Дано целое число N (N > 0). Найдите произведение N! = 1 * 2 * … * N.
 /*
 var n = +prompt("input a number","");
 var fact = 1;
@@ -33,26 +36,29 @@ alert(fact);
 */
 
 //Task #4
+/*Даны положительные числа A и B (A > B). На отрезке длины A размещено максимально возможное количество отрезков длины B (без наложений). Не используя операции умножения и деления, найдите длину незанятой части отрезка A.*/
 /*
 var a = +prompt("input first number","");
 var b = +prompt("input second number","");
-while (a >= b) {
-	a = a - b;
+while (a >= b && b != 0) {
+	a -= b;
 }
 alert("The length of remaining segment is: " + a);
 */
 
 // Task #5
+/*Дано целое число N (N > 1). Найдите наименьшее целое число K, при котором выполняется неравенство 3 * K > N.*/
 /*
 var n = +prompt("input a number","");
-var k = 1;
-while (n/3 >= k) {
+var k = 0;
+do {
 	k++;
-}
+} while (n >= 3*k); 
 alert("At least 'k' should be equal: " + k);
 */
 
 //Task #6
+/*Дано целое число N (>0). Используя операции деления нацело и взятия остатка от деления, выведите все его цифры, начиная с самой правой (разряда единиц).*/
 /*
 var n = +prompt("input a number","");
 var number;
@@ -102,14 +108,13 @@ my: {
 		   if (k != null && k <= 100 || k === 0) {
 			   alert("Value must be more than 100");
 			   continue;
-		   } else if (k > 100 || k == null || ) {
+		   } else if (k > 100 || k == null) {
 			   break my;			   
 		   }
 	}
 }
 alert("Cycle is ended");
 */
-
 //Task #9
 /*
 Даны целые числа A и B (A < B). Выведите все целые числа от A до B включительно; при этом число A должно выводиться 1 раз, число A + 1 должно выводиться 2 раза и т.д.
@@ -245,7 +250,7 @@ alert(calcOf(a, b, act));
 
 //Task #15
 /*Напишите функцию DigitN(K, N), которая возвращает N-ю цифру целого положительного числа K (цифры в числе нумеруются справа налево). Если количество цифр в числе K меньше N, то функция возвращает -1. */
-
+/*
 function digitN(x, n) {
 	var arrayDig = [];
 	var number = 0;
@@ -274,4 +279,35 @@ if (resDigit == -1) {
 } else {
 	alert("The " + b + " character of number " + a + " is " + resDigit + "!");
 }
+*/
+
+// Task#16
+/*Задание №16. Ассоциативный массив
+Напишите код, по строке на каждое действие:
+1. Создайте пустой объект user;
+2. Добавьте свойство name со значением Вася;
+3. Добавьте свойство surname со значением Петров;
+4. Выведите на экран значения свойств name и surname;
+5. Поменяйте значение name на Сергей;
+6. Выведите на экран значения свойства name;
+7. Удалите свойство name из объекта;
+8. Проверьте существование свойства name, если данное свойство отсутствует, выведите сообщение: "Свойство отсутствует".
+*/
+/*
+var user = {};
+user.name = "Вася";
+user.surname = "Петров";
+alert(user.name + " " + user.surname);
+user.name = "Сергей";
+alert(user.name);
+delete user.name;
+//var 1
+if (!("name" in user)) {
+	alert("Свойство отсутствует!");
+}
+//var2
+if (user.name == undefined) {
+	alert("Свойство отсутствует!");
+}
+*/
 
