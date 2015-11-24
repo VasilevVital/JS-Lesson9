@@ -3,13 +3,12 @@
 /*
 var a = +prompt("input first number","");
 var b = +prompt("input second number","");
-var arr = [];
 var n = 0;
-for (a ; a <= b; a++) {
-		 arr[n] = a;
+for (; a <= b; a++) {
+		 alert("Number: " + a);
 		 n+=1;		
 		}
-alert("The numerical series: " + arr + "    Amount of numbers in the row: " + arr.length);
+alert("Amount of numbers in the row: " + n);
 */
 
 //Task #2
@@ -84,16 +83,14 @@ do {
 /*
 var array = [];
 var arraySum = 0;
-my: {
 	for (var i = 0;; i++) {
 		var k = prompt("Input a value", "");
 		   if ( k == "" || k === null || isNaN(k) || k == " ") {
-				break my;
+				break;
 			}
 				array[i] = +k;
 				arraySum += array[i];	
 	}
-}
 alert("Sum of array values = "+ arraySum);
 */
 //Task #8
@@ -102,17 +99,15 @@ alert("Sum of array values = "+ arraySum);
 Напишите цикл, который предлагает prompt ввести число, большее 100. Если посетитель ввел другое число – попросить ввести еще раз, и так далее. Цикл должен спрашивать число пока либо посетитель не введет число, большее 100, либо не нажмет кнопку Cancel (ESC). Предполагается, что посетитель вводит только числа.
 */
 /*
-my: {
-	while (true) {
+while (true) {
 		var k = prompt("Input a value", "");
 		   if (k != null && k <= 100 || k === 0) {
 			   alert("Value must be more than 100");
 			   continue;
 		   } else if (k > 100 || k == null) {
-			   break my;			   
+			   break;			   
 		   }
 	}
-}
 alert("Cycle is ended");
 */
 //Task #9
@@ -137,9 +132,8 @@ for (a ; a <= b ; a++) {
 /*
 var x = +prompt("input first number","");
 var n = +prompt("input exponent","");
-var resultOfPow;
 function Pow(num, exp) {
-	resultOfPow = num;
+	var resultOfPow = num;
 	if (exp == 0 && num !=0) {
 		resultOfPow = 1;
 	} else { if (exp < 0) {
@@ -154,27 +148,27 @@ function Pow(num, exp) {
 				}	
 			  }
 	  }	
+return resultOfPow;  
 }
 Pow(x, n);
-alert("Result = " + resultOfPow);
-*/
-	
+alert("Result = " + Pow(x, n));
+*/	
 	
 //Task #11
 /*Напишите функцию RectP(x1, y1, x2, y2), которая возвращает периметр прямоугольника со сторонами, параллельными осям координат, по координатам (x1, y1), (x2, y2) его противоположных вершин. */
-//sqrt(sqr(x1-x2)+sqr(y1-y2))
 /*
 function rectP(x1, y1, x2, y2) {
 	var sideX = Math.sqrt(Math.pow((x1 - x2), 2));
 	var sideY = Math.sqrt(Math.pow((y1 - y2), 2));
 	var perimeter = 2 * (sideX + sideY);
-	alert("Perimeter of rectangle = " + perimeter);
+	return perimeter;
 }
 var x1 = +prompt("input coordinate X1","");
 var y1 = +prompt("input coordinate Y1","");
 var x2 = +prompt("input coordinate X2","");
 var y2 = +prompt("input coordinate Y2","");
 rectP(x1 , y1 , x2 , y2);
+alert("Perimeter of rectangle = " + rectP(x1 , y1 , x2 , y2));
 */
 
 //Task #12
@@ -184,21 +178,12 @@ function minMax(x, y) {
 	if (x > y) {
 		return y;
 	} else {
-		if (x < y) {
-			return x;
-		} else {
-			return 0;
-		}
-	}
+		return x;
+	} 
 }
-var a = +prompt("input first value","");
-var b = +prompt("input second value","");
-var minimal = minMax(a, b);
-if (minimal) {
-		alert ("The smallest of x,y = " + minimal)
-	} else {
-		alert("This numbers are equal!");
-}
+var a = +prompt("input first value (x)","");
+var b = +prompt("input second value (y)","");
+alert ("The smallest of x,y = " + minMax(a, b));
 */
 
 //Task #13
@@ -212,13 +197,11 @@ if (minimal) {
 function signX(x) {
 	if (x < 0) {
 		return -1;
-	} else {
-		if (x > 0) {
+	} else if (x > 0) {
 			return 1;
 		} else {
 			return 0;
 		}
-	 }
 }
 var numX = +prompt("input any value","");
 alert(signX(numX));
@@ -227,6 +210,7 @@ alert(signX(numX));
 //Task #14
 /* Напишите функцию Calc(A, B, Op), которая выполняет над числами A и B одну из арифметических операций и возвращает ее результат. Вид операции определяется целым числом Op: 1 – вычитание, 2 – умножение, 3 – деление, остальные значения – сложение.*/
 /*
+variant1:
 function calcOf(num1 , num2 , oper) {
 	if (oper == 1) {
 		return num1 - num2;
@@ -247,6 +231,30 @@ var b = +prompt("input second value","");
 var act = prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
 alert(calcOf(a, b, act));
 */
+//variant2
+function calcOf(num1 , num2 , oper) {
+	alert(num1);
+	alert(num2);
+	alert(oper);
+	switch(oper) {		
+		case 1:
+			return (num1 - num2);
+			break;
+		case 2:
+			return (num1 * num2);
+			break;
+		case 3:
+			return (num1 / num2);
+			break;
+		default:
+			return (num1 + num2);
+			break;
+	}
+}
+var a = +prompt("input first value","");
+var b = +prompt("input second value","");
+var act = prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
+alert(calcOf(a, b, act));
 
 //Task #15
 /*Напишите функцию DigitN(K, N), которая возвращает N-ю цифру целого положительного числа K (цифры в числе нумеруются справа налево). Если количество цифр в числе K меньше N, то функция возвращает -1. */
