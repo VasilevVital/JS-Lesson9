@@ -228,33 +228,31 @@ function calcOf(num1 , num2 , oper) {
 }
 var a = +prompt("input first value","");
 var b = +prompt("input second value","");
-var act = prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
+var act = +prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
 alert(calcOf(a, b, act));
 */
-//variant2
+//variant2 (enhanced)
+/*
 function calcOf(num1 , num2 , oper) {
-	alert(num1);
-	alert(num2);
-	alert(oper);
 	switch(oper) {		
 		case 1:
-			return (num1 - num2);
+			return num1 - num2;
 			break;
 		case 2:
-			return (num1 * num2);
+			return num1 * num2;
 			break;
 		case 3:
-			return (num1 / num2);
+			return num1 / num2;
 			break;
 		default:
-			return (num1 + num2);
-			break;
+			return num1 + num2;
 	}
 }
 var a = +prompt("input first value","");
 var b = +prompt("input second value","");
-var act = prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
+var act = +prompt("input operation: 1 - ded, 2 - mult, 3 - div, any other - sum","");
 alert(calcOf(a, b, act));
+*/
 
 //Task #15
 /*Напишите функцию DigitN(K, N), которая возвращает N-ю цифру целого положительного числа K (цифры в числе нумеруются справа налево). Если количество цифр в числе K меньше N, то функция возвращает -1. */
@@ -314,7 +312,7 @@ if (!("name" in user)) {
 	alert("Свойство отсутствует!");
 }
 //var2
-if (user.name == undefined) {
+if (user.name === undefined) {
 	alert("Свойство отсутствует!");
 }
 */
